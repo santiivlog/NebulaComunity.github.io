@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=3.5">
+    <title>Descargar Nebula Client</title>
+
+    <link rel="icon" href="assets/nebula.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(-45deg, #0f0f0f, #360044, #0f0f0f, #001122);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .image-panel {
+            background-image: url('assets/fondo2.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 1.5rem;
+            box-shadow: 0 0 40px #3c5153;
+            width: 400px;
+            height: 700px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .gallery-image {
+            transition: all 0.5s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 255, 128, 0.2);
+        }
+
+        .gallery-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transition: all 0.5s ease-in-out;
+        }
+
+        .gallery-image:hover::after {
+            left: 100%;
+        }
+
+        .download-card {
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            padding: 2rem;
+            text-align: center;
+            background: rgba(31, 41, 55, 0.7);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            background: rgba(31, 41, 55, 0.9);
+        }
+
+        .os-icon {
+            transition: all 0.3s ease-in-out;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .download-card:hover .os-icon {
+            transform: scale(1.1);
+            color: #10B981;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #10B981;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+<header class="fixed top-0 left-0 w-full bg-black bg-opacity-75 z-50 py-4">
+    <div class="container mx-auto flex justify-between items-center px-6">
+        <div class="flex items-center">
+            <img src="assets/nebula.png" alt="Nebula Studio" class="h-10 w-10 mr-2">
+            <h1 class="text-4xl font-bold text-green-500">Nebula Community</h1>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="index.html" class="nav-link text-white hover:text-green-400">Inicio</a>
+            <a href="contacto.html" class="nav-link text-white hover:text-green-400">Contacto</a>
+            <a href="eventos.html" class="nav-link text-white hover:text-green-400">Eventos</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-white focus:outline-none text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-black bg-opacity-90 px-6 pb-4">
+        <a href="index.html" class="block py-2 text-white hover:text-green-400">Inicio</a>
+        <a href="contacto.html" class="nav-link text-white hover:text-green-400">Contacto</a>
+        <a href="eventos.html" class="block py-2 text-white hover:text-green-400">Eventos</a>
+    </div>
+</header>
+
+<main class="container mx-auto px-4 py-8 mb-16">
+    <section class="text-center mb-12 pt-24">
+        <h1 class="text-4xl font-bold mb-3 text-green-400">Descargar Cliente Nebula Studio</h1>
+        <p class="text-xl text-gray-300">Este Cliente te permite jugar nuestros eventos públicos y betatests exclusivos.</p>
+    </section>
+
+    <section class="mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="gallery-image rounded-lg overflow-hidden">
+                <img src="assets/client1.png" alt="Imagen 1" class="w-full h-full object-cover">
+            </div>
+            <div class="gallery-image rounded-lg overflow-hidden">
+                <img src="assets/client2.png" alt="Imagen 2" class="w-full h-full object-cover">
+            </div>
+            <div class="gallery-image rounded-lg overflow-hidden">
+                <img src="assets/client3.png" alt="Imagen 3" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-6">
+        <h2 class="text-3xl font-bold text-center mb-10 text-green-500">Opciones de Descarga</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Windows -->
+            <div class="download-card" onclick="window.open('https://drive.google.com/uc?export=download&id=1tOSeLCuf3KUhvlDnaEh44rpxgEvyBbGV', '_blank')">
+                <i class="fab fa-windows os-icon text-blue-400"></i>
+                <h3 class="text-xl font-bold mb-4">Windows</h3>
+                <button class="bg-green-600 hover:bg-green-500 transition duration-300 transform hover:scale-105 text-white px-6 py-3 rounded-lg">
+                    DESCARGAR
+                </button>
+            </div>
+
+            <!-- macOS -->
+            <div class="download-card" onclick="window.open('https://drive.google.com/uc?export=download&id=10efqSfZ2vLcsRx9N6pqFzn7HVaKqHfge', '_blank')">
+                <i class="fab fa-apple os-icon text-gray-400"></i>
+                <h3 class="text-xl font-bold mb-4">macOS</h3>
+                <button class="bg-green-600 hover:bg-green-500 transition duration-300 transform hover:scale-105 text-white px-6 py-3 rounded-lg">
+                    DESCARGAR
+                </button>
+            </div>
+
+            <!-- Linux -->
+            <div class="download-card" onclick="window.open('https://drive.google.com/uc?export=download&id=1TUcnLL5rj7yQXW2PFDif8EypHkeRn0C2', '_blank')">
+                <i class="fab fa-linux os-icon text-gray-400"></i>
+                <h3 class="text-xl font-bold mb-4">Linux</h3>
+                <button class="bg-green-600 hover:bg-green-500 transition duration-300 transform hover:scale-105 text-white px-6 py-3 rounded-lg">
+                    DESCARGAR
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p class="text-gray-400">&copy; 2025 Nebula Community. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggleBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

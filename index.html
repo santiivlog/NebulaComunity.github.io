@@ -1,0 +1,287 @@
+launcher.html<!DOCTYPE html>
+<html lang="es">
+<!-- Previous head and style sections remain exactly the same until line 182 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Community</title>
+    
+    <link rel="icon" href="assets/nebula.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+          background: linear-gradient(-45deg, #0f0f0f, #360044, #0f0f0f, #001122);
+          background-size: 400% 400%;
+          animation: gradient 10s ease infinite;
+        }
+    
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+    
+        .image-panel {
+          background-image: url('image.png');
+          background-size: cover;
+          background-position: center;
+          border-radius: 1.5rem;
+          box-shadow: 0 0 40px #3c5153;
+          width: 400px;
+          height: 700px;
+        }
+        /* Previous styles remain exactly the same */
+        .wave-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .wave-bg::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+            z-index: 1;
+        }
+        .service-card {
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(3, 3, 3, 0.1);
+        }
+        .service-card img {
+            transition: all 0.3s ease-in-out;
+        }
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #bb02cc;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .video-container {
+            box-shadow: 0 0 20px rgba(0, 255, 128, 0.2);
+            border: 1px solid rgba(0, 255, 128, 0.1);
+        }
+        .service-icon {
+            transition: all 0.3s ease-in-out;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: #000000;
+        }
+        /* New collaborator card styles */
+        .collaborator-card {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease-in-out;
+        }
+        .collaborator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .social-icon {
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <!-- Header section remains exactly the same -->
+    <header class="fixed top-0 left-0 w-full bg-black bg-opacity-75 z-50 py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div class="flex items-center">
+                <img src="assets/nebula.png" alt="Nebula Studio" class="h-10 w-10 mr-2">
+                <h1 class="text-4xl font-bold text-green-500">Nebula Community</h1>
+            </div>
+            <!-- Navigation Menu -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-green-400">Inicio</a>
+                <a href="launcher.html" class="nav-link text-white hover:text-green-400">Nebula Client</a>
+                <a href="contacto.html" class="nav-link text-white hover:text-green-400">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24">
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold mb-4">Bienvenido a Nebula Community</h2>
+                <p class="text-xl text-gray-300">Creamos Eventos para minecraft</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-20 bg-gray-800 wave-bg">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-green-400 mb-12">Nuestros Servicios</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Previous service cards remain exactly the same -->
+                    <!-- Servicio 1: Eventos para Streamers -->
+                    <div class="service-card bg-gray-900 rounded-lg overflow-hidden shadow-xl">
+                        <div class="relative overflow-hidden">
+                            <img alt="Minecraft Event Arena" class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1576990049702-8418081b420e" />
+                        </div>
+                        <div class="p-6">
+                            <div class="text-6xl mb-4 text-purple-500 service-icon">
+                                <i class="fab fa-twitch"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Creamos Eventos para Streamers</h3>
+                            <p class="text-gray-400">Creamos eventos para ustedes los streamers que quieren crear eventos para su comunidad o crear eventos para solos streamer solo contactanos y te podemos ayudar en todo :D.</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2: Contratación de Eventos -->
+                    <div class="service-card bg-gray-900 rounded-lg overflow-hidden shadow-xl">
+                        <div class="relative overflow-hidden">
+                            <img alt="Minecraft Custom Event" class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1696569081571-43fae2739eed" />
+                        </div>
+                        <div class="p-6">
+                            <div class="text-6xl mb-4 text-yellow-500 service-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Contratanos para un evento</h3>
+                            <p class="text-gray-400">¡Somos Creadores De eventos para minecraft y te podemos Ofrecer nuestro servicio!</p>
+                            <a href="contacto.html" class="mt-4 inline-block text-green-400 hover:text-green-300">Contactanos ahora →</a>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3: Próximamente -->
+                    <div class="service-card bg-gray-900 rounded-lg overflow-hidden shadow-xl">
+                        <div class="relative overflow-hidden">
+                            <img alt="Minecraft Future Events" class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1644547933978-a79c34d5192a" />
+                        </div>
+                        <div class="p-6">
+                            <div class="text-6xl mb-4 text-green-500 service-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Proximamente</h3>
+                            <p class="text-gray-400">¡Estamos trabajando en nuevas y emocionantes ofertas! Mantente atento para conocer más sobre los servicios que ofreceremos en el futuro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Collaborators Section -->
+        <section class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl font-bold text-center text-green-400 mb-12">Nuestros Colaboradores</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Collaborator 1 -->
+                <div class="collaborator-card rounded-xl overflow-hidden p-6">
+                    <div class="relative h-64 mb-6 rounded-lg overflow-hidden">
+                        <img  alt="Colaborador 1" class="w-full h-full object-cover" src="assets/600x200.jfif" />
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-400">ZephyHosting</h3>
+                    <p class="text-gray-300 mb-6">ZephyHosting es un proveedor líder en servicios de alojamiento de servidores de juegos, especializado en títulos populares como Minecraft, ARK: Survival Evolved, Rust, Valheim, Conan Exiles, Left 4 Dead, Project Zomboid, Palworld, 7 Days to Die y Terraria.
+Como parte de nuestra colaboración, disfruta de un descuento exclusivo del 25% en tu primer mes con ZephyHosting utilizando el código [NEBULA] al comprar un servidor.</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://x.com/zephyhosting" target="_blank" class="social-icon text-white hover:text-blue-400">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://discord.gg/NvU9qzVrTp" target="_blank" class="social-icon text-white hover:text-indigo-400">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Collaborator 2 - Próximamente -->
+                <div class="collaborator-card rounded-xl overflow-hidden p-6">
+                    <div class="relative h-64 mb-6 rounded-lg overflow-hidden bg-gray-800 flex items-center justify-center">
+                        <span class="text-8xl text-gray-600">?</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-400">Próximamente</h3>
+                    <p class="text-gray-300 mb-6">Nuevo colaborador próximamente...</p>
+                    <div class="flex justify-center space-x-6">
+                        <span class="text-gray-600">
+                            <i class="fas fa-clock fa-2x"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center">
+                <div class="flex space-x-6 mb-6">
+                    <a href="https://discord.gg/rXgGuGFgnM" target="_blank" class="text-white hover:text-green-400 transition-colors">
+                        <i class="fab fa-discord fa-2x"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@NebulaCommunity/videos" target="_blank" class="text-white hover:text-green-400 transition-colors">
+                        <i class="fab fa-youtube fa-2x"></i>
+                    </a>
+                    <a href="https://x.com/NebulaComunity" target="_blank" class="text-white hover:text-green-400 transition-colors">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </div>
+                <p class="text-gray-400 text-center">&copy; 2025 Nebula Community Todos los derechos reservados.</p>
+                <a href="Terminos.html" class="mt-2 text-gray-400 hover:text-green-400 transition-colors">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+<body class="bg-gray-900 text-white">
+  <!-- Menú responsive agregado -->
+  <header class="fixed top-0 left-0 w-full bg-black bg-opacity-75 z-50 py-4">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <div class="flex items-center">
+        <img src="assets/nebula.png" alt="Nebula Studio" class="h-10 w-10 mr-2">
+        <h1 class="text-4xl font-bold text-green-500">Nebula Community</h1>
+      </div>
+
+      <!-- Menú en pantallas grandes -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link text-white hover:text-green-400">Inicio</a>
+        <a href="launcher.html" class="nav-link text-white hover:text-green-400">Nebula Client</a>
+        <a href="contacto.html" class="nav-link text-white hover:text-green-400">Contacto</a>
+      </nav>
+
+      <!-- Botón menú móvil -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú móvil desplegable -->
+    <div id="mobile-menu" class="md:hidden hidden bg-black bg-opacity-90 px-6 pb-4">
+      <a href="index.html" class="block py-2 text-white hover:text-green-400">Inicio</a>
+      <a href="launcher.html" class="block py-2 text-white hover:text-green-400">Nebula Client</a>
+      <a href="contacto.html" class="nav-link text-white hover:text-green-400">Contacto</a>
+    </div>
+  </header>
+
+  <!-- Script para abrir/cerrar menú móvil -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>

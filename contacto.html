@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Nebula Community</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    body {
+      background: linear-gradient(-45deg, #0f0f0f, #360044, #0f0f0f, #001122);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .image-panel {
+      background-image: url('image.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 40px #3c5153;
+      width: 400px;
+      height: 700px;
+    }
+  </style>
+</head>
+
+<body class="text-white flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+  <header class="bg-black bg-opacity-90 py-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <div class="flex items-center">
+        <img src="assets/nebula.png" alt="Nebula Studio" class="h-10 w-10 mr-2">
+        <h1 class="text-3xl font-bold text-green-500">Nebula Studio</h1>
+      </div>
+      <nav>
+        <ul class="flex space-x-6 text-sm md:text-base">
+          <li><a href="index.html" class="hover:text-green-400">Inicio</a></li>
+          <li><a href="client.html" class="hover:text-green-400">Nebula Client</a></li>
+          <li><a href="contacto.html" class="text-blue-400 font-bold">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTACTO -->
+  <main class="flex-grow flex items-center justify-center py-16 px-4">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl w-full">
+
+      <!-- PANEL IZQUIERDO CON IMAGEN -->
+      <div class="assets/ah"></div>
+
+      <!-- FORMULARIO DE CONTACTO -->
+      <div class="bg-black bg-opacity-80 rounded-xl shadow-lg p-10 w-full max-w-2xl">
+        <h2 class="text-3xl font-bold mb-4 text-center text-blue-400">Contacto</h2>
+        <p class="text-center mb-6 text-gray-300">¿Tienes un proyecto en mente? ¡Pongámonos en contacto!</p>
+
+        <form action="https://formspree.io/f/mzzdzqqj" method="POST" class="space-y-6">
+          <input type="text" name="nombre" placeholder="Tu Nombre" required class="w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400" />
+
+          <div class="flex gap-4">
+            <input type="email" name="email" placeholder="Correo Electrónico" required class="w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400" />
+            <input type="text" name="asunto" placeholder="Asunto" required class="w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400" />
+          </div>
+
+          <div>
+            <label class="block text-sm mb-1">¿Eres creador de contenido?</label>
+            <select name="creador" required class="w-full p-3 rounded bg-gray-800 text-white">
+              <option value="sí">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm mb-1">Tipo de Evento:</label>
+            <select name="evento" required class="w-full p-3 rounded bg-gray-800 text-white">
+              <option value="serie">Serie</option>
+              <option value="evento_corto">Evento Corto</option>
+              <option value="especial">Evento Especial</option>
+            </select>
+          </div>
+
+          <textarea name="mensaje" rows="5" maxlength="4000" placeholder="Descripción del Evento (máximo 4000 caracteres)" required class="w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400"></textarea>
+
+          <!-- Simulación de verificación -->
+          <div class="flex items-center gap-4 bg-gray-900 p-4 rounded">
+            <div class="text-green-400 text-xl"><i class="fas fa-check-circle"></i></div>
+            <div>
+              <p class="text-green-400 font-bold">¡Operación exitosa!</p>
+              <p class="text-xs text-gray-400">Tu verificación fue completada.</p>
+            </div>
+            <div class="ml-auto text-gray-400 text-sm">Cloudflare<br><a href="#" class="underline text-xs">Privacidad</a> · <a href="#" class="underline text-xs">Términos</a></div>
+          </div>
+
+          <button type="submit" class="w-full bg-green-500 hover:bg-green-400 transition-colors py-3 rounded text-white font-semibold">Enviar</button>
+        </form>
+
+        <p class="mt-4 text-xs text-center text-gray-400">Gracias por comunicarte con nosotros. Te responderemos en 1 a 3 días. Si no, abre un ticket en nuestro Discord Oficial.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-8 text-center text-gray-400 mt-auto">
+    <p>&copy; 2025 Nebula Community. Todos los derechos reservados.</p>
+    <div class="flex justify-center space-x-6 mt-4">
+      <a href="https://discord.gg/rXgGuGFgnM" target="_blank" class="text-white hover:text-green-400"><i class="fab fa-discord fa-2x"></i></a>
+      <a href="https://www.youtube.com/@NebulaCommunity/videos" target="_blank" class="text-white hover:text-green-400"><i class="fab fa-youtube fa-2x"></i></a>
+      <a href="https://x.com/NebulaComunity" target="_blank" class="text-white hover:text-green-400"><i class="fab fa-twitter fa-2x"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
